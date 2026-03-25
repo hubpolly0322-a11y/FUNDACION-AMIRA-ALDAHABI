@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación AMIRA ALDAHAB</title>
+
+    <style>
+        body {
+            font-family: Georgia;
+            background-color: #02021c;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FFD700;
+            margin-bottom: 40px;
+        }
+
+        .bancos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .banco-card {
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            width: 180px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .banco-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .banco-card img {
+            width: 100%;
+            height: 150px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 200px;
+        }
+
+        #loginFormContainer {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="logo-container">
+    <img src="https://hubpolly0322-a11y.github.io/FUNDACION-AMIRA-ALDAHABI/logo.png">
+</div>
+
+<h1>FUNDACION AMIRA ALDAHAB</h1>
+
+<div class="bancos-grid" id="tarjetasContainer">
+
+    <div class="banco-card">
+        <img src="https://hubpolly0322-a11y.github.io/FUNDACION-AMIRA-ALDAHABI/chase_bank_logo.png">
+        <p>Chase Bank</p>
+    </div>
+
+    <div class="banco-card">
+        <img src="https://hubpolly0322-a11y.github.io/FUNDACION-AMIRA-ALDAHABI/wells_fargo_logo.png">
+        <p>Wells Fargo</p>
+    </div>
+
+    <div class="banco-card">
+        <img src="https://hubpolly0322-a11y.github.io/FUNDACION-AMIRA-ALDAHABI/bank_of_america_logo.png">
+        <p>Bank of America</p>
+    </div>
+
+    <div class="banco-card">
+        <img src="https://hubpolly0322-a11y.github.io/FUNDACION-AMIRA-ALDAHABI/us_bank_logo.png">
+        <p>US Bank</p>
+    </div>
+
+</div>
+
+<div id="loginFormContainer">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" placeholder="Usuario"><br><br>
+    <input type="password" placeholder="Contraseña"><br><br>
+    <button>Ingresar</button>
+</div>
+
+<script>
+    const tarjetas = document.querySelectorAll('.banco-card');
+    const contenedor = document.getElementById('tarjetasContainer');
+    const form = document.getElementById('loginFormContainer');
+
+    tarjetas.forEach(t => {
+        t.addEventListener('click', () => {
+            contenedor.style.display = 'none';
+            form.style.display = 'block';
+        });
+    });
+</script>
+
+</body>
+</html>
