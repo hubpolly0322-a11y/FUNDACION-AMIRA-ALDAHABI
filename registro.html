@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Tu usuario" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Tu contraseña" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que la página se recargue
+            const usuario = document.getElementById('usuario').value.trim();
+            const contrasena = document.getElementById('contrasena').value.trim();
+
+            if(usuario && contrasena) {
+                alert(`¡Datos recibidos!\nUsuario: ${usuario}\nContraseña: ${contrasena}`);
+                // Aquí puedes redirigir a otra página si quieres
+                // window.location.href = "paginaPrincipal.html";
+            } else {
+                alert("Por favor completa todos los campos.");
+            }
+        });
+    </script>
+</body>
+</html>
